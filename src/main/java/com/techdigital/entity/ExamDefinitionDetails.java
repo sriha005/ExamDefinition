@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="question")
-public class QuestionEntity {
+public class ExamDefinitionDetails {
 	
 	@Id
 	@Column(name="questionID")
@@ -19,10 +19,10 @@ public class QuestionEntity {
 	@Column(name="questionOptions")
 	private String questionOptions;
 	
-	public QuestionEntity() {
+	public ExamDefinitionDetails() {
 		super();
 	}
-	public QuestionEntity(int qid, String questionText, String questionAnswer, String questionOptions) {
+	public ExamDefinitionDetails(int qid, String questionText, String questionAnswer, String questionOptions) {
 		super();
 		this.qid = qid;
 		this.questionText = questionText;

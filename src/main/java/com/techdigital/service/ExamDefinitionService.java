@@ -11,12 +11,12 @@ import com.techdigital.repository.ExamDefinitionRepository;
 @Service
 public class ExamDefinitionService {
 	
-	@Autowired
-	ExamDefinitionRepository examDefinitionRepository;
-	
-	public List<ExamDefinitionEntity> getAllExamDefinitions(){
-		List<ExamDefinitionEntity> examDefList = examDefinitionRepository.findAll();
-		return examDefList;
-	}
+//	@Autowired
+//	ExamDefinitionRepository examDefinitionRepository;
+//	
+//	public List<ExamDefinitionEntity> getAllExamDefinitions(){
+//		List<ExamDefinitionEntity> examDefList = examDefinitionRepository.findAll();
+//		return examDefList;
+//	}
 
 }

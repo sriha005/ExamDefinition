@@ -2,14 +2,19 @@ package com.techdigital.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="question")
-public class ExamDefinitionDetails {
+public class ExamDefinitionDetailsEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="questionID")
 	private int qid;
 	@Column(name="questionText")
@@ -18,17 +23,31 @@ public class ExamDefinitionDetails {
 	private String questionAnswer;
 	@Column(name="questionOptions")
 	private String questionOptions;
+	@ManyToOne
+	@JoinColumn(name="examID")
+	private ExamDefinitionEntity exam;
 	
-	public ExamDefinitionDetails() {
+	public ExamDefinitionDetailsEntity() {
 		super();
 	}
-	public ExamDefinitionDetails(int qid, String questionText, String questionAnswer, String questionOptions) {
+	public ExamDefinitionDetailsEntity(String questionText, String questionAnswer, String questionOptions,
+			ExamDefinitionEntity exam) {
+		super();
+		this.questionText = questionText;
+		this.questionAnswer = questionAnswer;
+		this.questionOptions = questionOptions;
+		this.exam = exam;
+	}
+	public ExamDefinitionDetailsEntity(int qid, String questionText, String questionAnswer, String questionOptions,
+			ExamDefinitionEntity exam) {
 		super();
 		this.qid = qid;
 		this.questionText = questionText;
 		this.questionAnswer = questionAnswer;
 		this.questionOptions = questionOptions;
+		this.exam = exam;
 	}
+
 	public int getQid() {
 		return qid;
 	}
@@ -53,5 +72,13 @@ public class ExamDefinitionDetails {
 	public void setQuestionOptions(String questionOptions) {
 		this.questionOptions = questionOptions;
 	}
+	public ExamDefinitionEntity getExam() {
+		return exam;
+	}
+	public void setExam(ExamDefinitionEntity exam) {
+		this.exam = exam;
+	}
+
+
 	
 }

@@ -2,6 +2,9 @@ package com.techdigital.domain;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class ExamDefinitionDetailsDomain implements Serializable {
 
 	private static final long serialVersionUID = -5388678298254389550L;

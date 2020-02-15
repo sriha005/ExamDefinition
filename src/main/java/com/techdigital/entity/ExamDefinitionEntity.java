@@ -12,19 +12,27 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
-@Table(name = "examDefinition")
+@Table(name = "examdefinition")
 public class ExamDefinitionEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="examID")
 	private int examID;
+	
 	@Column(name="name")
 	private String name;
-	@Column(name="passingScore")
+	
+	//Apparent passingSc equals passing_sc in checking for field existence in table
+	@Column(name="passingscore")
 	private int passingScore;
-	@OneToMany(mappedBy = "exam",
+	
+    @JsonManagedReference
+    @OneToMany(mappedBy = "exam",
 				cascade = CascadeType.ALL
 			)
 	private List<ExamDefinitionDetailsEntity> questions = new ArrayList<ExamDefinitionDetailsEntity>();

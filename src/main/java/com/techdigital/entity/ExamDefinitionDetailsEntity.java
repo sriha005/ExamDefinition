@@ -1,5 +1,6 @@
 package com.techdigital.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,20 +10,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="question")
 public class ExamDefinitionDetailsEntity {
-	
+	/*
+	 * 
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="questionID")
 	private int qid;
-	@Column(name="questionText")
+	@Column(name="questiontext")
 	private String questionText;
-	@Column(name="questionAnswer")
+	@Column(name="questionanswer")
 	private String questionAnswer;
-	@Column(name="questionOptions")
+	@Column(name="questionoptions")
 	private String questionOptions;
+	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="examID")
 	private ExamDefinitionEntity exam;
@@ -79,6 +86,8 @@ public class ExamDefinitionDetailsEntity {
 		this.exam = exam;
 	}
 
+	
 
+	
 	
 }

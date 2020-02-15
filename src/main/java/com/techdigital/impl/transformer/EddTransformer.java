@@ -23,6 +23,7 @@ public class EddTransformer {
 	}
 	public ExamDefinitionDetailsEntity eddDomainToEntity(ExamDefinitionDetailsDomain domain) {
 		ExamDefinitionDetailsEntity entity;
+		//edRepository.findOne(domain.getEid())
 		if(domain.getQid() == null) {
 			entity = new ExamDefinitionDetailsEntity(domain.getQuestionText(), domain.getQuestionAnswer(), domain.getQuestionOptions(), edRepository.findOne(domain.getEid()));	
 		}

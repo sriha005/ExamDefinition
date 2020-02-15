@@ -5,12 +5,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.techdigital.entity.ExamDefinitionDetailsEntity;
 import com.techdigital.entity.ExamDefinitionEntity;
+import com.techdigital.entity.ResponseEntity;
 
 @Repository
-public interface ExamDefinitionRepository extends JpaRepository<ExamDefinitionEntity, Integer>{
+public interface ResponseRepository extends JpaRepository<ResponseEntity, Integer>{
 
-	@Query(value="select e from ExamDefinitionEntity e where e.examID = :eid")
-	ExamDefinitionEntity findOne(@Param("eid") int eid);
+	@Query(value="select e from ResponseEntity e where e.userExamID = :eid")
+	ResponseEntity findOne(@Param("eid") int eid);
 }

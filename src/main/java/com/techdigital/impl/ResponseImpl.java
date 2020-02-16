@@ -37,4 +37,9 @@ public class ResponseImpl {
 		// This returns a JSON or XML with the users
 		return ResRepository.findAll();
 	}
+	
+	@GetMapping(path="/hello")
+	String hello() {
+		return "Hello World";
+	}
 }

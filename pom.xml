@@ -123,10 +123,7 @@
 			            <mainClass>com.techdigital.App</mainClass>
 			          </manifest>
 			        </archive>
-			        <descriptorRefs>
-			          <descriptorRef>jar-with-dependencies</descriptorRef>
-			        </descriptorRefs>
-			      </configuration>
+			       </configuration>
     			</plugin>
     			
     			

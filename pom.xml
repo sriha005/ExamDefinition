@@ -106,8 +106,8 @@
 				<plugin>
 			      <!-- Build an executable JAR -->
 			      <groupId>org.apache.maven.plugins</groupId>
-			      <artifactId>maven-jar-plugin</artifactId>
-			      <version>3.1.0</version>
+			      <artifactId>maven-dependency-plugin</artifactId>
+			      <version>3.0.1</version>
 			      <executions>
                     <execution>
                         <id>copy-dependencies</id>

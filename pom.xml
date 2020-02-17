@@ -54,7 +54,7 @@
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot</artifactId>
-		    
+		    <version>1.5.13.RELEASE</version>
 		</dependency>
 		
 	</dependencies>

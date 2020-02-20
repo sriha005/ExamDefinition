@@ -1,1 +1,1 @@
-web: java -jar target/mavenproject1-0.0.1-SNAPSHOT.jar
+web: java -jar target/TechDigitalLearningApp.jar

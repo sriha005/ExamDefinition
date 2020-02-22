@@ -103,7 +103,7 @@
 					<version>3.0.0</version>
 				</plugin>
 				
-       
+      <!--  
     <plugin>
       <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -111,8 +111,6 @@
       <configuration>
         <archive>
           <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
             <mainClass>com.techdigital.App</mainClass>
           </manifest>
         </archive>
@@ -129,8 +127,32 @@
        </executions>
     </plugin>
 			
+    	-->
     	
-    
+    	<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.5.5</version>
+    <configuration>
+      <archive>
+        <manifest>
+          <mainClass>com.techdigital.App.</mainClass>
+        </manifest>
+      </archive>
+      <descriptorRefs>
+        <descriptorRef>jar-with-dependencies</descriptorRef>
+      </descriptorRefs>
+    </configuration>
+    <executions>
+      <execution>
+      <id>make-assembly</id>
+      <phase>package</phase>
+      <goals>
+        <goal>single</goal>
+      </goals>
+      </execution>
+    </executions>
+  </plugin>		
+  
 			</plugins>
 		</pluginManagement>
 	</build>

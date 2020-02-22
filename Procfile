@@ -1,1 +1,1 @@
-web: java -jar target\TechDigitalLearningApp.jar
+web: java -jar target/TechDigitalLearningApp.jar

@@ -24,7 +24,7 @@ public class ResponseImpl {
 	@Autowired
 	ResponseRepository ResRepository;
 
-	@CrossOrigin(origins = {"http://localhost:4201","https://test-6780f.firebaseapp.com"})
+	@CrossOrigin(origins = {"http://192.168.0.165:4201","http://localhost:4201","https://test-6780f.firebaseapp.com"})
 	@PostMapping(path="/")
 	public @ResponseBody ResponseEntity addExam(@RequestBody ResponseEntity e ){
 		// This returns a JSON or XML with the users

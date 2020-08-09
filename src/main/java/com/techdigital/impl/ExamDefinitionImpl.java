@@ -23,7 +23,7 @@ public class ExamDefinitionImpl {
 	@Autowired
 	ExamDefinitionRepository edRepository;
 
-	@CrossOrigin(origins = {"http://localhost:4201","https://test-6780f.firebaseapp.com"})
+	@CrossOrigin(origins = {"http://192.168.0.165:4201","http://localhost:4201","https://test-6780f.firebaseapp.com"})
 	@GetMapping(path="/")
 	public @ResponseBody Iterable<ExamDefinitionEntity> getAllExams() {
 		// This returns a JSON or XML with the users
